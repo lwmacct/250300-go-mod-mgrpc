@@ -1,0 +1,68 @@
+syntax = "proto3";
+import "google/protobuf/any.proto";
+
+package mgrpc.v10;
+option go_package = ".;pb";
+
+service Ask {
+  rpc Any(google.protobuf.Any) returns (google.protobuf.Any);
+
+  rpc Int64AskBool(KvInt64) returns (KvBool) {}
+  rpc Int64AskBytes(KvInt64) returns (KvBytes) {}
+  rpc Int64AskInt64(KvInt64) returns (KvInt64) {}
+  rpc Int64AskUint64(KvInt64) returns (KvUint64) {}
+  rpc Int64AskFloat64(KvInt64) returns (KvFloat64) {}
+  rpc Int64AskString(KvInt64) returns (KvString) {}
+  rpc Int64AskStringArray(KvInt64) returns (KvStringArray) {}
+
+  rpc StringAskBool(KvString) returns (KvBool) {}
+  rpc StringAskBytes(KvString) returns (KvBytes) {}
+  rpc StringAskInt64(KvString) returns (KvInt64) {}
+  rpc StringAskUint64(KvString) returns (KvUint64) {}
+  rpc StringAskFloat64(KvString) returns (KvFloat64) {}
+  rpc StringAskString(KvString) returns (KvString) {}
+  rpc StringAskStringArray(KvString) returns (KvStringArray) {}
+
+  rpc BytesAskBool(KvBytes) returns (KvBool) {}
+  rpc BytesAskBytes(KvBytes) returns (KvBytes) {}
+  rpc BytesAskInt64(KvBytes) returns (KvInt64) {}
+  rpc BytesAskUint64(KvBytes) returns (KvUint64) {}
+  rpc BytesAskFloat64(KvBytes) returns (KvFloat64) {}
+  rpc BytesAskString(KvBytes) returns (KvString) {}
+  rpc BytesAskStringArray(KvBytes) returns (KvStringArray) {}
+}
+
+message KvBool {
+  string key = 1;
+  bool val = 2;
+}
+
+message KvInt64 {
+  string key = 1;
+  int64 val = 2;
+}
+
+message KvUint64 {
+  string key = 1;
+  uint64 val = 2;
+}
+
+message KvFloat64 {
+  string key = 1;
+  double val = 2;
+}
+
+message KvString {
+  string key = 1;
+  string val = 2;
+}
+
+message KvBytes {
+  string key = 1;
+  bytes val = 2;
+}
+
+message KvStringArray {
+  string key = 1;
+  repeated string val = 2;
+}
