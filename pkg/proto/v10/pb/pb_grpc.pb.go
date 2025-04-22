@@ -20,28 +20,40 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	Ask_Any_FullMethodName                  = "/mgrpc.v10.Ask/Any"
-	Ask_Int64AskBool_FullMethodName         = "/mgrpc.v10.Ask/Int64AskBool"
-	Ask_Int64AskBytes_FullMethodName        = "/mgrpc.v10.Ask/Int64AskBytes"
-	Ask_Int64AskInt64_FullMethodName        = "/mgrpc.v10.Ask/Int64AskInt64"
-	Ask_Int64AskUint64_FullMethodName       = "/mgrpc.v10.Ask/Int64AskUint64"
-	Ask_Int64AskFloat64_FullMethodName      = "/mgrpc.v10.Ask/Int64AskFloat64"
-	Ask_Int64AskString_FullMethodName       = "/mgrpc.v10.Ask/Int64AskString"
-	Ask_Int64AskStringArray_FullMethodName  = "/mgrpc.v10.Ask/Int64AskStringArray"
-	Ask_StringAskBool_FullMethodName        = "/mgrpc.v10.Ask/StringAskBool"
-	Ask_StringAskBytes_FullMethodName       = "/mgrpc.v10.Ask/StringAskBytes"
-	Ask_StringAskInt64_FullMethodName       = "/mgrpc.v10.Ask/StringAskInt64"
-	Ask_StringAskUint64_FullMethodName      = "/mgrpc.v10.Ask/StringAskUint64"
-	Ask_StringAskFloat64_FullMethodName     = "/mgrpc.v10.Ask/StringAskFloat64"
-	Ask_StringAskString_FullMethodName      = "/mgrpc.v10.Ask/StringAskString"
-	Ask_StringAskStringArray_FullMethodName = "/mgrpc.v10.Ask/StringAskStringArray"
-	Ask_BytesAskBool_FullMethodName         = "/mgrpc.v10.Ask/BytesAskBool"
-	Ask_BytesAskBytes_FullMethodName        = "/mgrpc.v10.Ask/BytesAskBytes"
-	Ask_BytesAskInt64_FullMethodName        = "/mgrpc.v10.Ask/BytesAskInt64"
-	Ask_BytesAskUint64_FullMethodName       = "/mgrpc.v10.Ask/BytesAskUint64"
-	Ask_BytesAskFloat64_FullMethodName      = "/mgrpc.v10.Ask/BytesAskFloat64"
-	Ask_BytesAskString_FullMethodName       = "/mgrpc.v10.Ask/BytesAskString"
-	Ask_BytesAskStringArray_FullMethodName  = "/mgrpc.v10.Ask/BytesAskStringArray"
+	Ask_Any_FullMethodName                       = "/mgrpc.v10.Ask/Any"
+	Ask_Int64AskBool_FullMethodName              = "/mgrpc.v10.Ask/Int64AskBool"
+	Ask_Int64AskBytes_FullMethodName             = "/mgrpc.v10.Ask/Int64AskBytes"
+	Ask_Int64AskInt64_FullMethodName             = "/mgrpc.v10.Ask/Int64AskInt64"
+	Ask_Int64AskFloat64_FullMethodName           = "/mgrpc.v10.Ask/Int64AskFloat64"
+	Ask_Int64AskString_FullMethodName            = "/mgrpc.v10.Ask/Int64AskString"
+	Ask_Int64AskStringArray_FullMethodName       = "/mgrpc.v10.Ask/Int64AskStringArray"
+	Ask_Int64AskMapStringBool_FullMethodName     = "/mgrpc.v10.Ask/Int64AskMapStringBool"
+	Ask_Int64AskMapStringInt64_FullMethodName    = "/mgrpc.v10.Ask/Int64AskMapStringInt64"
+	Ask_Int64AskMapStringFloat64_FullMethodName  = "/mgrpc.v10.Ask/Int64AskMapStringFloat64"
+	Ask_Int64AskMapStringString_FullMethodName   = "/mgrpc.v10.Ask/Int64AskMapStringString"
+	Ask_Int64AskMapStringBytes_FullMethodName    = "/mgrpc.v10.Ask/Int64AskMapStringBytes"
+	Ask_StringAskBool_FullMethodName             = "/mgrpc.v10.Ask/StringAskBool"
+	Ask_StringAskBytes_FullMethodName            = "/mgrpc.v10.Ask/StringAskBytes"
+	Ask_StringAskInt64_FullMethodName            = "/mgrpc.v10.Ask/StringAskInt64"
+	Ask_StringAskFloat64_FullMethodName          = "/mgrpc.v10.Ask/StringAskFloat64"
+	Ask_StringAskString_FullMethodName           = "/mgrpc.v10.Ask/StringAskString"
+	Ask_StringAskStringArray_FullMethodName      = "/mgrpc.v10.Ask/StringAskStringArray"
+	Ask_StringAskMapStringBool_FullMethodName    = "/mgrpc.v10.Ask/StringAskMapStringBool"
+	Ask_StringAskMapStringInt64_FullMethodName   = "/mgrpc.v10.Ask/StringAskMapStringInt64"
+	Ask_StringAskMapStringFloat64_FullMethodName = "/mgrpc.v10.Ask/StringAskMapStringFloat64"
+	Ask_StringAskMapStringString_FullMethodName  = "/mgrpc.v10.Ask/StringAskMapStringString"
+	Ask_StringAskMapStringBytes_FullMethodName   = "/mgrpc.v10.Ask/StringAskMapStringBytes"
+	Ask_BytesAskBool_FullMethodName              = "/mgrpc.v10.Ask/BytesAskBool"
+	Ask_BytesAskBytes_FullMethodName             = "/mgrpc.v10.Ask/BytesAskBytes"
+	Ask_BytesAskInt64_FullMethodName             = "/mgrpc.v10.Ask/BytesAskInt64"
+	Ask_BytesAskFloat64_FullMethodName           = "/mgrpc.v10.Ask/BytesAskFloat64"
+	Ask_BytesAskString_FullMethodName            = "/mgrpc.v10.Ask/BytesAskString"
+	Ask_BytesAskStringArray_FullMethodName       = "/mgrpc.v10.Ask/BytesAskStringArray"
+	Ask_BytesAskMapStringBool_FullMethodName     = "/mgrpc.v10.Ask/BytesAskMapStringBool"
+	Ask_BytesAskMapStringInt64_FullMethodName    = "/mgrpc.v10.Ask/BytesAskMapStringInt64"
+	Ask_BytesAskMapStringFloat64_FullMethodName  = "/mgrpc.v10.Ask/BytesAskMapStringFloat64"
+	Ask_BytesAskMapStringString_FullMethodName   = "/mgrpc.v10.Ask/BytesAskMapStringString"
+	Ask_BytesAskMapStringBytes_FullMethodName    = "/mgrpc.v10.Ask/BytesAskMapStringBytes"
 )
 
 // AskClient is the client API for Ask service.
@@ -52,24 +64,36 @@ type AskClient interface {
 	Int64AskBool(ctx context.Context, in *KvInt64, opts ...grpc.CallOption) (*KvBool, error)
 	Int64AskBytes(ctx context.Context, in *KvInt64, opts ...grpc.CallOption) (*KvBytes, error)
 	Int64AskInt64(ctx context.Context, in *KvInt64, opts ...grpc.CallOption) (*KvInt64, error)
-	Int64AskUint64(ctx context.Context, in *KvInt64, opts ...grpc.CallOption) (*KvUint64, error)
 	Int64AskFloat64(ctx context.Context, in *KvInt64, opts ...grpc.CallOption) (*KvFloat64, error)
 	Int64AskString(ctx context.Context, in *KvInt64, opts ...grpc.CallOption) (*KvString, error)
 	Int64AskStringArray(ctx context.Context, in *KvInt64, opts ...grpc.CallOption) (*KvStringArray, error)
+	Int64AskMapStringBool(ctx context.Context, in *KvInt64, opts ...grpc.CallOption) (*MapStringBool, error)
+	Int64AskMapStringInt64(ctx context.Context, in *KvInt64, opts ...grpc.CallOption) (*MapStringInt64, error)
+	Int64AskMapStringFloat64(ctx context.Context, in *KvInt64, opts ...grpc.CallOption) (*MapStringFloat64, error)
+	Int64AskMapStringString(ctx context.Context, in *KvInt64, opts ...grpc.CallOption) (*MapStringString, error)
+	Int64AskMapStringBytes(ctx context.Context, in *KvInt64, opts ...grpc.CallOption) (*MapStringBytes, error)
 	StringAskBool(ctx context.Context, in *KvString, opts ...grpc.CallOption) (*KvBool, error)
 	StringAskBytes(ctx context.Context, in *KvString, opts ...grpc.CallOption) (*KvBytes, error)
 	StringAskInt64(ctx context.Context, in *KvString, opts ...grpc.CallOption) (*KvInt64, error)
-	StringAskUint64(ctx context.Context, in *KvString, opts ...grpc.CallOption) (*KvUint64, error)
 	StringAskFloat64(ctx context.Context, in *KvString, opts ...grpc.CallOption) (*KvFloat64, error)
 	StringAskString(ctx context.Context, in *KvString, opts ...grpc.CallOption) (*KvString, error)
 	StringAskStringArray(ctx context.Context, in *KvString, opts ...grpc.CallOption) (*KvStringArray, error)
+	StringAskMapStringBool(ctx context.Context, in *KvString, opts ...grpc.CallOption) (*MapStringBool, error)
+	StringAskMapStringInt64(ctx context.Context, in *KvString, opts ...grpc.CallOption) (*MapStringInt64, error)
+	StringAskMapStringFloat64(ctx context.Context, in *KvString, opts ...grpc.CallOption) (*MapStringFloat64, error)
+	StringAskMapStringString(ctx context.Context, in *KvString, opts ...grpc.CallOption) (*MapStringString, error)
+	StringAskMapStringBytes(ctx context.Context, in *KvString, opts ...grpc.CallOption) (*MapStringBytes, error)
 	BytesAskBool(ctx context.Context, in *KvBytes, opts ...grpc.CallOption) (*KvBool, error)
 	BytesAskBytes(ctx context.Context, in *KvBytes, opts ...grpc.CallOption) (*KvBytes, error)
 	BytesAskInt64(ctx context.Context, in *KvBytes, opts ...grpc.CallOption) (*KvInt64, error)
-	BytesAskUint64(ctx context.Context, in *KvBytes, opts ...grpc.CallOption) (*KvUint64, error)
 	BytesAskFloat64(ctx context.Context, in *KvBytes, opts ...grpc.CallOption) (*KvFloat64, error)
 	BytesAskString(ctx context.Context, in *KvBytes, opts ...grpc.CallOption) (*KvString, error)
 	BytesAskStringArray(ctx context.Context, in *KvBytes, opts ...grpc.CallOption) (*KvStringArray, error)
+	BytesAskMapStringBool(ctx context.Context, in *KvBytes, opts ...grpc.CallOption) (*MapStringBool, error)
+	BytesAskMapStringInt64(ctx context.Context, in *KvBytes, opts ...grpc.CallOption) (*MapStringInt64, error)
+	BytesAskMapStringFloat64(ctx context.Context, in *KvBytes, opts ...grpc.CallOption) (*MapStringFloat64, error)
+	BytesAskMapStringString(ctx context.Context, in *KvBytes, opts ...grpc.CallOption) (*MapStringString, error)
+	BytesAskMapStringBytes(ctx context.Context, in *KvBytes, opts ...grpc.CallOption) (*MapStringBytes, error)
 }
 
 type askClient struct {
@@ -120,16 +144,6 @@ func (c *askClient) Int64AskInt64(ctx context.Context, in *KvInt64, opts ...grpc
 	return out, nil
 }
 
-func (c *askClient) Int64AskUint64(ctx context.Context, in *KvInt64, opts ...grpc.CallOption) (*KvUint64, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(KvUint64)
-	err := c.cc.Invoke(ctx, Ask_Int64AskUint64_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *askClient) Int64AskFloat64(ctx context.Context, in *KvInt64, opts ...grpc.CallOption) (*KvFloat64, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(KvFloat64)
@@ -154,6 +168,56 @@ func (c *askClient) Int64AskStringArray(ctx context.Context, in *KvInt64, opts .
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(KvStringArray)
 	err := c.cc.Invoke(ctx, Ask_Int64AskStringArray_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *askClient) Int64AskMapStringBool(ctx context.Context, in *KvInt64, opts ...grpc.CallOption) (*MapStringBool, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(MapStringBool)
+	err := c.cc.Invoke(ctx, Ask_Int64AskMapStringBool_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *askClient) Int64AskMapStringInt64(ctx context.Context, in *KvInt64, opts ...grpc.CallOption) (*MapStringInt64, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(MapStringInt64)
+	err := c.cc.Invoke(ctx, Ask_Int64AskMapStringInt64_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *askClient) Int64AskMapStringFloat64(ctx context.Context, in *KvInt64, opts ...grpc.CallOption) (*MapStringFloat64, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(MapStringFloat64)
+	err := c.cc.Invoke(ctx, Ask_Int64AskMapStringFloat64_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *askClient) Int64AskMapStringString(ctx context.Context, in *KvInt64, opts ...grpc.CallOption) (*MapStringString, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(MapStringString)
+	err := c.cc.Invoke(ctx, Ask_Int64AskMapStringString_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *askClient) Int64AskMapStringBytes(ctx context.Context, in *KvInt64, opts ...grpc.CallOption) (*MapStringBytes, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(MapStringBytes)
+	err := c.cc.Invoke(ctx, Ask_Int64AskMapStringBytes_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -190,16 +254,6 @@ func (c *askClient) StringAskInt64(ctx context.Context, in *KvString, opts ...gr
 	return out, nil
 }
 
-func (c *askClient) StringAskUint64(ctx context.Context, in *KvString, opts ...grpc.CallOption) (*KvUint64, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(KvUint64)
-	err := c.cc.Invoke(ctx, Ask_StringAskUint64_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *askClient) StringAskFloat64(ctx context.Context, in *KvString, opts ...grpc.CallOption) (*KvFloat64, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(KvFloat64)
@@ -224,6 +278,56 @@ func (c *askClient) StringAskStringArray(ctx context.Context, in *KvString, opts
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(KvStringArray)
 	err := c.cc.Invoke(ctx, Ask_StringAskStringArray_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *askClient) StringAskMapStringBool(ctx context.Context, in *KvString, opts ...grpc.CallOption) (*MapStringBool, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(MapStringBool)
+	err := c.cc.Invoke(ctx, Ask_StringAskMapStringBool_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *askClient) StringAskMapStringInt64(ctx context.Context, in *KvString, opts ...grpc.CallOption) (*MapStringInt64, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(MapStringInt64)
+	err := c.cc.Invoke(ctx, Ask_StringAskMapStringInt64_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *askClient) StringAskMapStringFloat64(ctx context.Context, in *KvString, opts ...grpc.CallOption) (*MapStringFloat64, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(MapStringFloat64)
+	err := c.cc.Invoke(ctx, Ask_StringAskMapStringFloat64_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *askClient) StringAskMapStringString(ctx context.Context, in *KvString, opts ...grpc.CallOption) (*MapStringString, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(MapStringString)
+	err := c.cc.Invoke(ctx, Ask_StringAskMapStringString_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *askClient) StringAskMapStringBytes(ctx context.Context, in *KvString, opts ...grpc.CallOption) (*MapStringBytes, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(MapStringBytes)
+	err := c.cc.Invoke(ctx, Ask_StringAskMapStringBytes_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -260,16 +364,6 @@ func (c *askClient) BytesAskInt64(ctx context.Context, in *KvBytes, opts ...grpc
 	return out, nil
 }
 
-func (c *askClient) BytesAskUint64(ctx context.Context, in *KvBytes, opts ...grpc.CallOption) (*KvUint64, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(KvUint64)
-	err := c.cc.Invoke(ctx, Ask_BytesAskUint64_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *askClient) BytesAskFloat64(ctx context.Context, in *KvBytes, opts ...grpc.CallOption) (*KvFloat64, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(KvFloat64)
@@ -300,6 +394,56 @@ func (c *askClient) BytesAskStringArray(ctx context.Context, in *KvBytes, opts .
 	return out, nil
 }
 
+func (c *askClient) BytesAskMapStringBool(ctx context.Context, in *KvBytes, opts ...grpc.CallOption) (*MapStringBool, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(MapStringBool)
+	err := c.cc.Invoke(ctx, Ask_BytesAskMapStringBool_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *askClient) BytesAskMapStringInt64(ctx context.Context, in *KvBytes, opts ...grpc.CallOption) (*MapStringInt64, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(MapStringInt64)
+	err := c.cc.Invoke(ctx, Ask_BytesAskMapStringInt64_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *askClient) BytesAskMapStringFloat64(ctx context.Context, in *KvBytes, opts ...grpc.CallOption) (*MapStringFloat64, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(MapStringFloat64)
+	err := c.cc.Invoke(ctx, Ask_BytesAskMapStringFloat64_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *askClient) BytesAskMapStringString(ctx context.Context, in *KvBytes, opts ...grpc.CallOption) (*MapStringString, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(MapStringString)
+	err := c.cc.Invoke(ctx, Ask_BytesAskMapStringString_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *askClient) BytesAskMapStringBytes(ctx context.Context, in *KvBytes, opts ...grpc.CallOption) (*MapStringBytes, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(MapStringBytes)
+	err := c.cc.Invoke(ctx, Ask_BytesAskMapStringBytes_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // AskServer is the server API for Ask service.
 // All implementations must embed UnimplementedAskServer
 // for forward compatibility.
@@ -308,24 +452,36 @@ type AskServer interface {
 	Int64AskBool(context.Context, *KvInt64) (*KvBool, error)
 	Int64AskBytes(context.Context, *KvInt64) (*KvBytes, error)
 	Int64AskInt64(context.Context, *KvInt64) (*KvInt64, error)
-	Int64AskUint64(context.Context, *KvInt64) (*KvUint64, error)
 	Int64AskFloat64(context.Context, *KvInt64) (*KvFloat64, error)
 	Int64AskString(context.Context, *KvInt64) (*KvString, error)
 	Int64AskStringArray(context.Context, *KvInt64) (*KvStringArray, error)
+	Int64AskMapStringBool(context.Context, *KvInt64) (*MapStringBool, error)
+	Int64AskMapStringInt64(context.Context, *KvInt64) (*MapStringInt64, error)
+	Int64AskMapStringFloat64(context.Context, *KvInt64) (*MapStringFloat64, error)
+	Int64AskMapStringString(context.Context, *KvInt64) (*MapStringString, error)
+	Int64AskMapStringBytes(context.Context, *KvInt64) (*MapStringBytes, error)
 	StringAskBool(context.Context, *KvString) (*KvBool, error)
 	StringAskBytes(context.Context, *KvString) (*KvBytes, error)
 	StringAskInt64(context.Context, *KvString) (*KvInt64, error)
-	StringAskUint64(context.Context, *KvString) (*KvUint64, error)
 	StringAskFloat64(context.Context, *KvString) (*KvFloat64, error)
 	StringAskString(context.Context, *KvString) (*KvString, error)
 	StringAskStringArray(context.Context, *KvString) (*KvStringArray, error)
+	StringAskMapStringBool(context.Context, *KvString) (*MapStringBool, error)
+	StringAskMapStringInt64(context.Context, *KvString) (*MapStringInt64, error)
+	StringAskMapStringFloat64(context.Context, *KvString) (*MapStringFloat64, error)
+	StringAskMapStringString(context.Context, *KvString) (*MapStringString, error)
+	StringAskMapStringBytes(context.Context, *KvString) (*MapStringBytes, error)
 	BytesAskBool(context.Context, *KvBytes) (*KvBool, error)
 	BytesAskBytes(context.Context, *KvBytes) (*KvBytes, error)
 	BytesAskInt64(context.Context, *KvBytes) (*KvInt64, error)
-	BytesAskUint64(context.Context, *KvBytes) (*KvUint64, error)
 	BytesAskFloat64(context.Context, *KvBytes) (*KvFloat64, error)
 	BytesAskString(context.Context, *KvBytes) (*KvString, error)
 	BytesAskStringArray(context.Context, *KvBytes) (*KvStringArray, error)
+	BytesAskMapStringBool(context.Context, *KvBytes) (*MapStringBool, error)
+	BytesAskMapStringInt64(context.Context, *KvBytes) (*MapStringInt64, error)
+	BytesAskMapStringFloat64(context.Context, *KvBytes) (*MapStringFloat64, error)
+	BytesAskMapStringString(context.Context, *KvBytes) (*MapStringString, error)
+	BytesAskMapStringBytes(context.Context, *KvBytes) (*MapStringBytes, error)
 	mustEmbedUnimplementedAskServer()
 }
 
@@ -348,9 +504,6 @@ func (UnimplementedAskServer) Int64AskBytes(context.Context, *KvInt64) (*KvBytes
 func (UnimplementedAskServer) Int64AskInt64(context.Context, *KvInt64) (*KvInt64, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Int64AskInt64 not implemented")
 }
-func (UnimplementedAskServer) Int64AskUint64(context.Context, *KvInt64) (*KvUint64, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Int64AskUint64 not implemented")
-}
 func (UnimplementedAskServer) Int64AskFloat64(context.Context, *KvInt64) (*KvFloat64, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Int64AskFloat64 not implemented")
 }
@@ -359,6 +512,21 @@ func (UnimplementedAskServer) Int64AskString(context.Context, *KvInt64) (*KvStri
 }
 func (UnimplementedAskServer) Int64AskStringArray(context.Context, *KvInt64) (*KvStringArray, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Int64AskStringArray not implemented")
+}
+func (UnimplementedAskServer) Int64AskMapStringBool(context.Context, *KvInt64) (*MapStringBool, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Int64AskMapStringBool not implemented")
+}
+func (UnimplementedAskServer) Int64AskMapStringInt64(context.Context, *KvInt64) (*MapStringInt64, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Int64AskMapStringInt64 not implemented")
+}
+func (UnimplementedAskServer) Int64AskMapStringFloat64(context.Context, *KvInt64) (*MapStringFloat64, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Int64AskMapStringFloat64 not implemented")
+}
+func (UnimplementedAskServer) Int64AskMapStringString(context.Context, *KvInt64) (*MapStringString, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Int64AskMapStringString not implemented")
+}
+func (UnimplementedAskServer) Int64AskMapStringBytes(context.Context, *KvInt64) (*MapStringBytes, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Int64AskMapStringBytes not implemented")
 }
 func (UnimplementedAskServer) StringAskBool(context.Context, *KvString) (*KvBool, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method StringAskBool not implemented")
@@ -369,9 +537,6 @@ func (UnimplementedAskServer) StringAskBytes(context.Context, *KvString) (*KvByt
 func (UnimplementedAskServer) StringAskInt64(context.Context, *KvString) (*KvInt64, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method StringAskInt64 not implemented")
 }
-func (UnimplementedAskServer) StringAskUint64(context.Context, *KvString) (*KvUint64, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method StringAskUint64 not implemented")
-}
 func (UnimplementedAskServer) StringAskFloat64(context.Context, *KvString) (*KvFloat64, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method StringAskFloat64 not implemented")
 }
@@ -380,6 +545,21 @@ func (UnimplementedAskServer) StringAskString(context.Context, *KvString) (*KvSt
 }
 func (UnimplementedAskServer) StringAskStringArray(context.Context, *KvString) (*KvStringArray, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method StringAskStringArray not implemented")
+}
+func (UnimplementedAskServer) StringAskMapStringBool(context.Context, *KvString) (*MapStringBool, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StringAskMapStringBool not implemented")
+}
+func (UnimplementedAskServer) StringAskMapStringInt64(context.Context, *KvString) (*MapStringInt64, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StringAskMapStringInt64 not implemented")
+}
+func (UnimplementedAskServer) StringAskMapStringFloat64(context.Context, *KvString) (*MapStringFloat64, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StringAskMapStringFloat64 not implemented")
+}
+func (UnimplementedAskServer) StringAskMapStringString(context.Context, *KvString) (*MapStringString, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StringAskMapStringString not implemented")
+}
+func (UnimplementedAskServer) StringAskMapStringBytes(context.Context, *KvString) (*MapStringBytes, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method StringAskMapStringBytes not implemented")
 }
 func (UnimplementedAskServer) BytesAskBool(context.Context, *KvBytes) (*KvBool, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BytesAskBool not implemented")
@@ -390,9 +570,6 @@ func (UnimplementedAskServer) BytesAskBytes(context.Context, *KvBytes) (*KvBytes
 func (UnimplementedAskServer) BytesAskInt64(context.Context, *KvBytes) (*KvInt64, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BytesAskInt64 not implemented")
 }
-func (UnimplementedAskServer) BytesAskUint64(context.Context, *KvBytes) (*KvUint64, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method BytesAskUint64 not implemented")
-}
 func (UnimplementedAskServer) BytesAskFloat64(context.Context, *KvBytes) (*KvFloat64, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BytesAskFloat64 not implemented")
 }
@@ -401,6 +578,21 @@ func (UnimplementedAskServer) BytesAskString(context.Context, *KvBytes) (*KvStri
 }
 func (UnimplementedAskServer) BytesAskStringArray(context.Context, *KvBytes) (*KvStringArray, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BytesAskStringArray not implemented")
+}
+func (UnimplementedAskServer) BytesAskMapStringBool(context.Context, *KvBytes) (*MapStringBool, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BytesAskMapStringBool not implemented")
+}
+func (UnimplementedAskServer) BytesAskMapStringInt64(context.Context, *KvBytes) (*MapStringInt64, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BytesAskMapStringInt64 not implemented")
+}
+func (UnimplementedAskServer) BytesAskMapStringFloat64(context.Context, *KvBytes) (*MapStringFloat64, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BytesAskMapStringFloat64 not implemented")
+}
+func (UnimplementedAskServer) BytesAskMapStringString(context.Context, *KvBytes) (*MapStringString, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BytesAskMapStringString not implemented")
+}
+func (UnimplementedAskServer) BytesAskMapStringBytes(context.Context, *KvBytes) (*MapStringBytes, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BytesAskMapStringBytes not implemented")
 }
 func (UnimplementedAskServer) mustEmbedUnimplementedAskServer() {}
 func (UnimplementedAskServer) testEmbeddedByValue()             {}
@@ -495,24 +687,6 @@ func _Ask_Int64AskInt64_Handler(srv interface{}, ctx context.Context, dec func(i
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Ask_Int64AskUint64_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(KvInt64)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AskServer).Int64AskUint64(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Ask_Int64AskUint64_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AskServer).Int64AskUint64(ctx, req.(*KvInt64))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Ask_Int64AskFloat64_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(KvInt64)
 	if err := dec(in); err != nil {
@@ -563,6 +737,96 @@ func _Ask_Int64AskStringArray_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AskServer).Int64AskStringArray(ctx, req.(*KvInt64))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ask_Int64AskMapStringBool_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(KvInt64)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AskServer).Int64AskMapStringBool(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Ask_Int64AskMapStringBool_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AskServer).Int64AskMapStringBool(ctx, req.(*KvInt64))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ask_Int64AskMapStringInt64_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(KvInt64)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AskServer).Int64AskMapStringInt64(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Ask_Int64AskMapStringInt64_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AskServer).Int64AskMapStringInt64(ctx, req.(*KvInt64))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ask_Int64AskMapStringFloat64_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(KvInt64)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AskServer).Int64AskMapStringFloat64(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Ask_Int64AskMapStringFloat64_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AskServer).Int64AskMapStringFloat64(ctx, req.(*KvInt64))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ask_Int64AskMapStringString_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(KvInt64)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AskServer).Int64AskMapStringString(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Ask_Int64AskMapStringString_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AskServer).Int64AskMapStringString(ctx, req.(*KvInt64))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ask_Int64AskMapStringBytes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(KvInt64)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AskServer).Int64AskMapStringBytes(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Ask_Int64AskMapStringBytes_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AskServer).Int64AskMapStringBytes(ctx, req.(*KvInt64))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -621,24 +885,6 @@ func _Ask_StringAskInt64_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Ask_StringAskUint64_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(KvString)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AskServer).StringAskUint64(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Ask_StringAskUint64_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AskServer).StringAskUint64(ctx, req.(*KvString))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Ask_StringAskFloat64_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(KvString)
 	if err := dec(in); err != nil {
@@ -689,6 +935,96 @@ func _Ask_StringAskStringArray_Handler(srv interface{}, ctx context.Context, dec
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AskServer).StringAskStringArray(ctx, req.(*KvString))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ask_StringAskMapStringBool_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(KvString)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AskServer).StringAskMapStringBool(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Ask_StringAskMapStringBool_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AskServer).StringAskMapStringBool(ctx, req.(*KvString))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ask_StringAskMapStringInt64_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(KvString)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AskServer).StringAskMapStringInt64(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Ask_StringAskMapStringInt64_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AskServer).StringAskMapStringInt64(ctx, req.(*KvString))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ask_StringAskMapStringFloat64_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(KvString)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AskServer).StringAskMapStringFloat64(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Ask_StringAskMapStringFloat64_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AskServer).StringAskMapStringFloat64(ctx, req.(*KvString))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ask_StringAskMapStringString_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(KvString)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AskServer).StringAskMapStringString(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Ask_StringAskMapStringString_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AskServer).StringAskMapStringString(ctx, req.(*KvString))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ask_StringAskMapStringBytes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(KvString)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AskServer).StringAskMapStringBytes(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Ask_StringAskMapStringBytes_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AskServer).StringAskMapStringBytes(ctx, req.(*KvString))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -747,24 +1083,6 @@ func _Ask_BytesAskInt64_Handler(srv interface{}, ctx context.Context, dec func(i
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Ask_BytesAskUint64_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(KvBytes)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AskServer).BytesAskUint64(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Ask_BytesAskUint64_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AskServer).BytesAskUint64(ctx, req.(*KvBytes))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Ask_BytesAskFloat64_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(KvBytes)
 	if err := dec(in); err != nil {
@@ -819,6 +1137,96 @@ func _Ask_BytesAskStringArray_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Ask_BytesAskMapStringBool_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(KvBytes)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AskServer).BytesAskMapStringBool(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Ask_BytesAskMapStringBool_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AskServer).BytesAskMapStringBool(ctx, req.(*KvBytes))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ask_BytesAskMapStringInt64_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(KvBytes)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AskServer).BytesAskMapStringInt64(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Ask_BytesAskMapStringInt64_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AskServer).BytesAskMapStringInt64(ctx, req.(*KvBytes))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ask_BytesAskMapStringFloat64_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(KvBytes)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AskServer).BytesAskMapStringFloat64(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Ask_BytesAskMapStringFloat64_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AskServer).BytesAskMapStringFloat64(ctx, req.(*KvBytes))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ask_BytesAskMapStringString_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(KvBytes)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AskServer).BytesAskMapStringString(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Ask_BytesAskMapStringString_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AskServer).BytesAskMapStringString(ctx, req.(*KvBytes))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Ask_BytesAskMapStringBytes_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(KvBytes)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AskServer).BytesAskMapStringBytes(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Ask_BytesAskMapStringBytes_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AskServer).BytesAskMapStringBytes(ctx, req.(*KvBytes))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Ask_ServiceDesc is the grpc.ServiceDesc for Ask service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -843,10 +1251,6 @@ var Ask_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Ask_Int64AskInt64_Handler,
 		},
 		{
-			MethodName: "Int64AskUint64",
-			Handler:    _Ask_Int64AskUint64_Handler,
-		},
-		{
 			MethodName: "Int64AskFloat64",
 			Handler:    _Ask_Int64AskFloat64_Handler,
 		},
@@ -857,6 +1261,26 @@ var Ask_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Int64AskStringArray",
 			Handler:    _Ask_Int64AskStringArray_Handler,
+		},
+		{
+			MethodName: "Int64AskMapStringBool",
+			Handler:    _Ask_Int64AskMapStringBool_Handler,
+		},
+		{
+			MethodName: "Int64AskMapStringInt64",
+			Handler:    _Ask_Int64AskMapStringInt64_Handler,
+		},
+		{
+			MethodName: "Int64AskMapStringFloat64",
+			Handler:    _Ask_Int64AskMapStringFloat64_Handler,
+		},
+		{
+			MethodName: "Int64AskMapStringString",
+			Handler:    _Ask_Int64AskMapStringString_Handler,
+		},
+		{
+			MethodName: "Int64AskMapStringBytes",
+			Handler:    _Ask_Int64AskMapStringBytes_Handler,
 		},
 		{
 			MethodName: "StringAskBool",
@@ -871,10 +1295,6 @@ var Ask_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Ask_StringAskInt64_Handler,
 		},
 		{
-			MethodName: "StringAskUint64",
-			Handler:    _Ask_StringAskUint64_Handler,
-		},
-		{
 			MethodName: "StringAskFloat64",
 			Handler:    _Ask_StringAskFloat64_Handler,
 		},
@@ -885,6 +1305,26 @@ var Ask_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "StringAskStringArray",
 			Handler:    _Ask_StringAskStringArray_Handler,
+		},
+		{
+			MethodName: "StringAskMapStringBool",
+			Handler:    _Ask_StringAskMapStringBool_Handler,
+		},
+		{
+			MethodName: "StringAskMapStringInt64",
+			Handler:    _Ask_StringAskMapStringInt64_Handler,
+		},
+		{
+			MethodName: "StringAskMapStringFloat64",
+			Handler:    _Ask_StringAskMapStringFloat64_Handler,
+		},
+		{
+			MethodName: "StringAskMapStringString",
+			Handler:    _Ask_StringAskMapStringString_Handler,
+		},
+		{
+			MethodName: "StringAskMapStringBytes",
+			Handler:    _Ask_StringAskMapStringBytes_Handler,
 		},
 		{
 			MethodName: "BytesAskBool",
@@ -899,10 +1339,6 @@ var Ask_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Ask_BytesAskInt64_Handler,
 		},
 		{
-			MethodName: "BytesAskUint64",
-			Handler:    _Ask_BytesAskUint64_Handler,
-		},
-		{
 			MethodName: "BytesAskFloat64",
 			Handler:    _Ask_BytesAskFloat64_Handler,
 		},
@@ -913,6 +1349,26 @@ var Ask_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "BytesAskStringArray",
 			Handler:    _Ask_BytesAskStringArray_Handler,
+		},
+		{
+			MethodName: "BytesAskMapStringBool",
+			Handler:    _Ask_BytesAskMapStringBool_Handler,
+		},
+		{
+			MethodName: "BytesAskMapStringInt64",
+			Handler:    _Ask_BytesAskMapStringInt64_Handler,
+		},
+		{
+			MethodName: "BytesAskMapStringFloat64",
+			Handler:    _Ask_BytesAskMapStringFloat64_Handler,
+		},
+		{
+			MethodName: "BytesAskMapStringString",
+			Handler:    _Ask_BytesAskMapStringString_Handler,
+		},
+		{
+			MethodName: "BytesAskMapStringBytes",
+			Handler:    _Ask_BytesAskMapStringBytes_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

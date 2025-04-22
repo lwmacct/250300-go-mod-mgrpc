@@ -10,26 +10,38 @@ service Ask {
   rpc Int64AskBool(KvInt64) returns (KvBool) {}
   rpc Int64AskBytes(KvInt64) returns (KvBytes) {}
   rpc Int64AskInt64(KvInt64) returns (KvInt64) {}
-  rpc Int64AskUint64(KvInt64) returns (KvUint64) {}
   rpc Int64AskFloat64(KvInt64) returns (KvFloat64) {}
   rpc Int64AskString(KvInt64) returns (KvString) {}
   rpc Int64AskStringArray(KvInt64) returns (KvStringArray) {}
+  rpc Int64AskMapStringBool(KvInt64) returns (MapStringBool) {}
+  rpc Int64AskMapStringInt64(KvInt64) returns (MapStringInt64) {}
+  rpc Int64AskMapStringFloat64(KvInt64) returns (MapStringFloat64) {}
+  rpc Int64AskMapStringString(KvInt64) returns (MapStringString) {}
+  rpc Int64AskMapStringBytes(KvInt64) returns (MapStringBytes) {}
 
   rpc StringAskBool(KvString) returns (KvBool) {}
   rpc StringAskBytes(KvString) returns (KvBytes) {}
   rpc StringAskInt64(KvString) returns (KvInt64) {}
-  rpc StringAskUint64(KvString) returns (KvUint64) {}
   rpc StringAskFloat64(KvString) returns (KvFloat64) {}
   rpc StringAskString(KvString) returns (KvString) {}
   rpc StringAskStringArray(KvString) returns (KvStringArray) {}
+  rpc StringAskMapStringBool(KvString) returns (MapStringBool) {}
+  rpc StringAskMapStringInt64(KvString) returns (MapStringInt64) {}
+  rpc StringAskMapStringFloat64(KvString) returns (MapStringFloat64) {}
+  rpc StringAskMapStringString(KvString) returns (MapStringString) {}
+  rpc StringAskMapStringBytes(KvString) returns (MapStringBytes) {}
 
   rpc BytesAskBool(KvBytes) returns (KvBool) {}
   rpc BytesAskBytes(KvBytes) returns (KvBytes) {}
   rpc BytesAskInt64(KvBytes) returns (KvInt64) {}
-  rpc BytesAskUint64(KvBytes) returns (KvUint64) {}
   rpc BytesAskFloat64(KvBytes) returns (KvFloat64) {}
   rpc BytesAskString(KvBytes) returns (KvString) {}
   rpc BytesAskStringArray(KvBytes) returns (KvStringArray) {}
+  rpc BytesAskMapStringBool(KvBytes) returns (MapStringBool) {}
+  rpc BytesAskMapStringInt64(KvBytes) returns (MapStringInt64) {}
+  rpc BytesAskMapStringFloat64(KvBytes) returns (MapStringFloat64) {}
+  rpc BytesAskMapStringString(KvBytes) returns (MapStringString) {}
+  rpc BytesAskMapStringBytes(KvBytes) returns (MapStringBytes) {}
 }
 
 message KvBool {
@@ -40,11 +52,6 @@ message KvBool {
 message KvInt64 {
   string key = 1;
   int64 val = 2;
-}
-
-message KvUint64 {
-  string key = 1;
-  uint64 val = 2;
 }
 
 message KvFloat64 {
@@ -65,4 +72,29 @@ message KvBytes {
 message KvStringArray {
   string key = 1;
   repeated string val = 2;
+}
+
+message MapStringBool {
+  string key = 1;
+  map<string, bool> val = 2;
+}
+
+message MapStringInt64 {
+  string key = 1;
+  map<string, int64> val = 2;
+}
+
+message MapStringFloat64 {
+  string key = 1;
+  map<string, double> val = 2;
+}
+
+message MapStringString {
+  string key = 1;
+  map<string, string> val = 2;
+}
+
+message MapStringBytes {
+  string key = 1;
+  map<string, bytes> val = 2;
 }

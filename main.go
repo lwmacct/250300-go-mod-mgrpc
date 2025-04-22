@@ -85,6 +85,13 @@ func main() {
 		}
 
 		fmt.Printf("res: %v\n", res)
+		_ = pb.MapStringString{
+			Key: "test",
+			Val: map[string]string{
+				"test": "test",
+			},
+		}
+
 	}
 
 }
