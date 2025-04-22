@@ -38,15 +38,20 @@ service Ask {
   rpc BytesAskString(KvBytes) returns (KvString) {}
   rpc BytesAskStringArray(KvBytes) returns (KvStringArray) {}
   rpc BytesAskMapStringBool(KvBytes) returns (MapStringBool) {}
+  rpc BytesAskMapStringBytes(KvBytes) returns (MapStringBytes) {}
   rpc BytesAskMapStringInt64(KvBytes) returns (MapStringInt64) {}
   rpc BytesAskMapStringFloat64(KvBytes) returns (MapStringFloat64) {}
   rpc BytesAskMapStringString(KvBytes) returns (MapStringString) {}
-  rpc BytesAskMapStringBytes(KvBytes) returns (MapStringBytes) {}
 }
 
 message KvBool {
   string key = 1;
   bool val = 2;
+}
+
+message KvBytes {
+  string key = 1;
+  bytes val = 2;
 }
 
 message KvInt64 {
@@ -64,10 +69,6 @@ message KvString {
   string val = 2;
 }
 
-message KvBytes {
-  string key = 1;
-  bytes val = 2;
-}
 
 message KvStringArray {
   string key = 1;
@@ -77,6 +78,11 @@ message KvStringArray {
 message MapStringBool {
   string key = 1;
   map<string, bool> val = 2;
+}
+
+message MapStringBytes {
+  string key = 1;
+  map<string, bytes> val = 2;
 }
 
 message MapStringInt64 {
@@ -92,9 +98,4 @@ message MapStringFloat64 {
 message MapStringString {
   string key = 1;
   map<string, string> val = 2;
-}
-
-message MapStringBytes {
-  string key = 1;
-  map<string, bytes> val = 2;
 }
