@@ -74,6 +74,58 @@ func (x *KvBool) GetVal() bool {
 	return false
 }
 
+type KvBytes struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Val           []byte                 `protobuf:"bytes,2,opt,name=val,proto3" json:"val,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *KvBytes) Reset() {
+	*x = KvBytes{}
+	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *KvBytes) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*KvBytes) ProtoMessage() {}
+
+func (x *KvBytes) ProtoReflect() protoreflect.Message {
+	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use KvBytes.ProtoReflect.Descriptor instead.
+func (*KvBytes) Descriptor() ([]byte, []int) {
+	return file_pkg_proto_v10_pb_pb_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *KvBytes) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *KvBytes) GetVal() []byte {
+	if x != nil {
+		return x.Val
+	}
+	return nil
+}
+
 type KvInt64 struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
@@ -84,7 +136,7 @@ type KvInt64 struct {
 
 func (x *KvInt64) Reset() {
 	*x = KvInt64{}
-	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[1]
+	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -96,7 +148,7 @@ func (x *KvInt64) String() string {
 func (*KvInt64) ProtoMessage() {}
 
 func (x *KvInt64) ProtoReflect() protoreflect.Message {
-	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[1]
+	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -109,7 +161,7 @@ func (x *KvInt64) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use KvInt64.ProtoReflect.Descriptor instead.
 func (*KvInt64) Descriptor() ([]byte, []int) {
-	return file_pkg_proto_v10_pb_pb_proto_rawDescGZIP(), []int{1}
+	return file_pkg_proto_v10_pb_pb_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *KvInt64) GetKey() string {
@@ -136,7 +188,7 @@ type KvFloat64 struct {
 
 func (x *KvFloat64) Reset() {
 	*x = KvFloat64{}
-	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[2]
+	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -148,7 +200,7 @@ func (x *KvFloat64) String() string {
 func (*KvFloat64) ProtoMessage() {}
 
 func (x *KvFloat64) ProtoReflect() protoreflect.Message {
-	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[2]
+	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -161,7 +213,7 @@ func (x *KvFloat64) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use KvFloat64.ProtoReflect.Descriptor instead.
 func (*KvFloat64) Descriptor() ([]byte, []int) {
-	return file_pkg_proto_v10_pb_pb_proto_rawDescGZIP(), []int{2}
+	return file_pkg_proto_v10_pb_pb_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *KvFloat64) GetKey() string {
@@ -188,7 +240,7 @@ type KvString struct {
 
 func (x *KvString) Reset() {
 	*x = KvString{}
-	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[3]
+	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -200,7 +252,7 @@ func (x *KvString) String() string {
 func (*KvString) ProtoMessage() {}
 
 func (x *KvString) ProtoReflect() protoreflect.Message {
-	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[3]
+	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -213,7 +265,7 @@ func (x *KvString) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use KvString.ProtoReflect.Descriptor instead.
 func (*KvString) Descriptor() ([]byte, []int) {
-	return file_pkg_proto_v10_pb_pb_proto_rawDescGZIP(), []int{3}
+	return file_pkg_proto_v10_pb_pb_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *KvString) GetKey() string {
@@ -228,58 +280,6 @@ func (x *KvString) GetVal() string {
 		return x.Val
 	}
 	return ""
-}
-
-type KvBytes struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
-	Val           []byte                 `protobuf:"bytes,2,opt,name=val,proto3" json:"val,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *KvBytes) Reset() {
-	*x = KvBytes{}
-	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[4]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *KvBytes) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*KvBytes) ProtoMessage() {}
-
-func (x *KvBytes) ProtoReflect() protoreflect.Message {
-	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[4]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use KvBytes.ProtoReflect.Descriptor instead.
-func (*KvBytes) Descriptor() ([]byte, []int) {
-	return file_pkg_proto_v10_pb_pb_proto_rawDescGZIP(), []int{4}
-}
-
-func (x *KvBytes) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
-
-func (x *KvBytes) GetVal() []byte {
-	if x != nil {
-		return x.Val
-	}
-	return nil
 }
 
 type KvStringArray struct {
@@ -386,6 +386,58 @@ func (x *MapStringBool) GetVal() map[string]bool {
 	return nil
 }
 
+type MapStringBytes struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Val           map[string][]byte      `protobuf:"bytes,2,rep,name=val,proto3" json:"val,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *MapStringBytes) Reset() {
+	*x = MapStringBytes{}
+	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MapStringBytes) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MapStringBytes) ProtoMessage() {}
+
+func (x *MapStringBytes) ProtoReflect() protoreflect.Message {
+	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MapStringBytes.ProtoReflect.Descriptor instead.
+func (*MapStringBytes) Descriptor() ([]byte, []int) {
+	return file_pkg_proto_v10_pb_pb_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *MapStringBytes) GetKey() string {
+	if x != nil {
+		return x.Key
+	}
+	return ""
+}
+
+func (x *MapStringBytes) GetVal() map[string][]byte {
+	if x != nil {
+		return x.Val
+	}
+	return nil
+}
+
 type MapStringInt64 struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
@@ -396,7 +448,7 @@ type MapStringInt64 struct {
 
 func (x *MapStringInt64) Reset() {
 	*x = MapStringInt64{}
-	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[7]
+	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -408,7 +460,7 @@ func (x *MapStringInt64) String() string {
 func (*MapStringInt64) ProtoMessage() {}
 
 func (x *MapStringInt64) ProtoReflect() protoreflect.Message {
-	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[7]
+	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -421,7 +473,7 @@ func (x *MapStringInt64) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MapStringInt64.ProtoReflect.Descriptor instead.
 func (*MapStringInt64) Descriptor() ([]byte, []int) {
-	return file_pkg_proto_v10_pb_pb_proto_rawDescGZIP(), []int{7}
+	return file_pkg_proto_v10_pb_pb_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *MapStringInt64) GetKey() string {
@@ -448,7 +500,7 @@ type MapStringFloat64 struct {
 
 func (x *MapStringFloat64) Reset() {
 	*x = MapStringFloat64{}
-	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[8]
+	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -460,7 +512,7 @@ func (x *MapStringFloat64) String() string {
 func (*MapStringFloat64) ProtoMessage() {}
 
 func (x *MapStringFloat64) ProtoReflect() protoreflect.Message {
-	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[8]
+	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -473,7 +525,7 @@ func (x *MapStringFloat64) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MapStringFloat64.ProtoReflect.Descriptor instead.
 func (*MapStringFloat64) Descriptor() ([]byte, []int) {
-	return file_pkg_proto_v10_pb_pb_proto_rawDescGZIP(), []int{8}
+	return file_pkg_proto_v10_pb_pb_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *MapStringFloat64) GetKey() string {
@@ -500,7 +552,7 @@ type MapStringString struct {
 
 func (x *MapStringString) Reset() {
 	*x = MapStringString{}
-	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[9]
+	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -512,7 +564,7 @@ func (x *MapStringString) String() string {
 func (*MapStringString) ProtoMessage() {}
 
 func (x *MapStringString) ProtoReflect() protoreflect.Message {
-	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[9]
+	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -525,7 +577,7 @@ func (x *MapStringString) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MapStringString.ProtoReflect.Descriptor instead.
 func (*MapStringString) Descriptor() ([]byte, []int) {
-	return file_pkg_proto_v10_pb_pb_proto_rawDescGZIP(), []int{9}
+	return file_pkg_proto_v10_pb_pb_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *MapStringString) GetKey() string {
@@ -542,58 +594,6 @@ func (x *MapStringString) GetVal() map[string]string {
 	return nil
 }
 
-type MapStringBytes struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Key           string                 `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
-	Val           map[string][]byte      `protobuf:"bytes,2,rep,name=val,proto3" json:"val,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *MapStringBytes) Reset() {
-	*x = MapStringBytes{}
-	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[10]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *MapStringBytes) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*MapStringBytes) ProtoMessage() {}
-
-func (x *MapStringBytes) ProtoReflect() protoreflect.Message {
-	mi := &file_pkg_proto_v10_pb_pb_proto_msgTypes[10]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use MapStringBytes.ProtoReflect.Descriptor instead.
-func (*MapStringBytes) Descriptor() ([]byte, []int) {
-	return file_pkg_proto_v10_pb_pb_proto_rawDescGZIP(), []int{10}
-}
-
-func (x *MapStringBytes) GetKey() string {
-	if x != nil {
-		return x.Key
-	}
-	return ""
-}
-
-func (x *MapStringBytes) GetVal() map[string][]byte {
-	if x != nil {
-		return x.Val
-	}
-	return nil
-}
-
 var File_pkg_proto_v10_pb_pb_proto protoreflect.FileDescriptor
 
 const file_pkg_proto_v10_pb_pb_proto_rawDesc = "" +
@@ -602,6 +602,9 @@ const file_pkg_proto_v10_pb_pb_proto_rawDesc = "" +
 	"\x06KvBool\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x10\n" +
 	"\x03val\x18\x02 \x01(\bR\x03val\"-\n" +
+	"\aKvBytes\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12\x10\n" +
+	"\x03val\x18\x02 \x01(\fR\x03val\"-\n" +
 	"\aKvInt64\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x10\n" +
 	"\x03val\x18\x02 \x01(\x03R\x03val\"/\n" +
@@ -610,10 +613,7 @@ const file_pkg_proto_v10_pb_pb_proto_rawDesc = "" +
 	"\x03val\x18\x02 \x01(\x01R\x03val\".\n" +
 	"\bKvString\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x10\n" +
-	"\x03val\x18\x02 \x01(\tR\x03val\"-\n" +
-	"\aKvBytes\x12\x10\n" +
-	"\x03key\x18\x01 \x01(\tR\x03key\x12\x10\n" +
-	"\x03val\x18\x02 \x01(\fR\x03val\"3\n" +
+	"\x03val\x18\x02 \x01(\tR\x03val\"3\n" +
 	"\rKvStringArray\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x10\n" +
 	"\x03val\x18\x02 \x03(\tR\x03val\"\x8e\x01\n" +
@@ -623,6 +623,12 @@ const file_pkg_proto_v10_pb_pb_proto_rawDesc = "" +
 	"\bValEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\bR\x05value:\x028\x01\"\x90\x01\n" +
+	"\x0eMapStringBytes\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x124\n" +
+	"\x03val\x18\x02 \x03(\v2\".mgrpc.v10.MapStringBytes.ValEntryR\x03val\x1a6\n" +
+	"\bValEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\fR\x05value:\x028\x01\"\x90\x01\n" +
 	"\x0eMapStringInt64\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x124\n" +
 	"\x03val\x18\x02 \x03(\v2\".mgrpc.v10.MapStringInt64.ValEntryR\x03val\x1a6\n" +
@@ -640,13 +646,7 @@ const file_pkg_proto_v10_pb_pb_proto_rawDesc = "" +
 	"\x03val\x18\x02 \x03(\v2#.mgrpc.v10.MapStringString.ValEntryR\x03val\x1a6\n" +
 	"\bValEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\x90\x01\n" +
-	"\x0eMapStringBytes\x12\x10\n" +
-	"\x03key\x18\x01 \x01(\tR\x03key\x124\n" +
-	"\x03val\x18\x02 \x03(\v2\".mgrpc.v10.MapStringBytes.ValEntryR\x03val\x1a6\n" +
-	"\bValEntry\x12\x10\n" +
-	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\fR\x05value:\x028\x012\x95\x12\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x012\x95\x12\n" +
 	"\x03Ask\x121\n" +
 	"\x03Any\x12\x14.google.protobuf.Any\x1a\x14.google.protobuf.Any\x127\n" +
 	"\fInt64AskBool\x12\x12.mgrpc.v10.KvInt64\x1a\x11.mgrpc.v10.KvBool\"\x00\x129\n" +
@@ -678,10 +678,10 @@ const file_pkg_proto_v10_pb_pb_proto_rawDesc = "" +
 	"\x0eBytesAskString\x12\x12.mgrpc.v10.KvBytes\x1a\x13.mgrpc.v10.KvString\"\x00\x12E\n" +
 	"\x13BytesAskStringArray\x12\x12.mgrpc.v10.KvBytes\x1a\x18.mgrpc.v10.KvStringArray\"\x00\x12G\n" +
 	"\x15BytesAskMapStringBool\x12\x12.mgrpc.v10.KvBytes\x1a\x18.mgrpc.v10.MapStringBool\"\x00\x12I\n" +
+	"\x16BytesAskMapStringBytes\x12\x12.mgrpc.v10.KvBytes\x1a\x19.mgrpc.v10.MapStringBytes\"\x00\x12I\n" +
 	"\x16BytesAskMapStringInt64\x12\x12.mgrpc.v10.KvBytes\x1a\x19.mgrpc.v10.MapStringInt64\"\x00\x12M\n" +
 	"\x18BytesAskMapStringFloat64\x12\x12.mgrpc.v10.KvBytes\x1a\x1b.mgrpc.v10.MapStringFloat64\"\x00\x12K\n" +
-	"\x17BytesAskMapStringString\x12\x12.mgrpc.v10.KvBytes\x1a\x1a.mgrpc.v10.MapStringString\"\x00\x12I\n" +
-	"\x16BytesAskMapStringBytes\x12\x12.mgrpc.v10.KvBytes\x1a\x19.mgrpc.v10.MapStringBytes\"\x00B\x06Z\x04.;pbb\x06proto3"
+	"\x17BytesAskMapStringString\x12\x12.mgrpc.v10.KvBytes\x1a\x1a.mgrpc.v10.MapStringString\"\x00B\x06Z\x04.;pbb\x06proto3"
 
 var (
 	file_pkg_proto_v10_pb_pb_proto_rawDescOnce sync.Once
@@ -698,97 +698,97 @@ func file_pkg_proto_v10_pb_pb_proto_rawDescGZIP() []byte {
 var file_pkg_proto_v10_pb_pb_proto_msgTypes = make([]protoimpl.MessageInfo, 16)
 var file_pkg_proto_v10_pb_pb_proto_goTypes = []any{
 	(*KvBool)(nil),           // 0: mgrpc.v10.KvBool
-	(*KvInt64)(nil),          // 1: mgrpc.v10.KvInt64
-	(*KvFloat64)(nil),        // 2: mgrpc.v10.KvFloat64
-	(*KvString)(nil),         // 3: mgrpc.v10.KvString
-	(*KvBytes)(nil),          // 4: mgrpc.v10.KvBytes
+	(*KvBytes)(nil),          // 1: mgrpc.v10.KvBytes
+	(*KvInt64)(nil),          // 2: mgrpc.v10.KvInt64
+	(*KvFloat64)(nil),        // 3: mgrpc.v10.KvFloat64
+	(*KvString)(nil),         // 4: mgrpc.v10.KvString
 	(*KvStringArray)(nil),    // 5: mgrpc.v10.KvStringArray
 	(*MapStringBool)(nil),    // 6: mgrpc.v10.MapStringBool
-	(*MapStringInt64)(nil),   // 7: mgrpc.v10.MapStringInt64
-	(*MapStringFloat64)(nil), // 8: mgrpc.v10.MapStringFloat64
-	(*MapStringString)(nil),  // 9: mgrpc.v10.MapStringString
-	(*MapStringBytes)(nil),   // 10: mgrpc.v10.MapStringBytes
+	(*MapStringBytes)(nil),   // 7: mgrpc.v10.MapStringBytes
+	(*MapStringInt64)(nil),   // 8: mgrpc.v10.MapStringInt64
+	(*MapStringFloat64)(nil), // 9: mgrpc.v10.MapStringFloat64
+	(*MapStringString)(nil),  // 10: mgrpc.v10.MapStringString
 	nil,                      // 11: mgrpc.v10.MapStringBool.ValEntry
-	nil,                      // 12: mgrpc.v10.MapStringInt64.ValEntry
-	nil,                      // 13: mgrpc.v10.MapStringFloat64.ValEntry
-	nil,                      // 14: mgrpc.v10.MapStringString.ValEntry
-	nil,                      // 15: mgrpc.v10.MapStringBytes.ValEntry
+	nil,                      // 12: mgrpc.v10.MapStringBytes.ValEntry
+	nil,                      // 13: mgrpc.v10.MapStringInt64.ValEntry
+	nil,                      // 14: mgrpc.v10.MapStringFloat64.ValEntry
+	nil,                      // 15: mgrpc.v10.MapStringString.ValEntry
 	(*anypb.Any)(nil),        // 16: google.protobuf.Any
 }
 var file_pkg_proto_v10_pb_pb_proto_depIdxs = []int32{
 	11, // 0: mgrpc.v10.MapStringBool.val:type_name -> mgrpc.v10.MapStringBool.ValEntry
-	12, // 1: mgrpc.v10.MapStringInt64.val:type_name -> mgrpc.v10.MapStringInt64.ValEntry
-	13, // 2: mgrpc.v10.MapStringFloat64.val:type_name -> mgrpc.v10.MapStringFloat64.ValEntry
-	14, // 3: mgrpc.v10.MapStringString.val:type_name -> mgrpc.v10.MapStringString.ValEntry
-	15, // 4: mgrpc.v10.MapStringBytes.val:type_name -> mgrpc.v10.MapStringBytes.ValEntry
+	12, // 1: mgrpc.v10.MapStringBytes.val:type_name -> mgrpc.v10.MapStringBytes.ValEntry
+	13, // 2: mgrpc.v10.MapStringInt64.val:type_name -> mgrpc.v10.MapStringInt64.ValEntry
+	14, // 3: mgrpc.v10.MapStringFloat64.val:type_name -> mgrpc.v10.MapStringFloat64.ValEntry
+	15, // 4: mgrpc.v10.MapStringString.val:type_name -> mgrpc.v10.MapStringString.ValEntry
 	16, // 5: mgrpc.v10.Ask.Any:input_type -> google.protobuf.Any
-	1,  // 6: mgrpc.v10.Ask.Int64AskBool:input_type -> mgrpc.v10.KvInt64
-	1,  // 7: mgrpc.v10.Ask.Int64AskBytes:input_type -> mgrpc.v10.KvInt64
-	1,  // 8: mgrpc.v10.Ask.Int64AskInt64:input_type -> mgrpc.v10.KvInt64
-	1,  // 9: mgrpc.v10.Ask.Int64AskFloat64:input_type -> mgrpc.v10.KvInt64
-	1,  // 10: mgrpc.v10.Ask.Int64AskString:input_type -> mgrpc.v10.KvInt64
-	1,  // 11: mgrpc.v10.Ask.Int64AskStringArray:input_type -> mgrpc.v10.KvInt64
-	1,  // 12: mgrpc.v10.Ask.Int64AskMapStringBool:input_type -> mgrpc.v10.KvInt64
-	1,  // 13: mgrpc.v10.Ask.Int64AskMapStringInt64:input_type -> mgrpc.v10.KvInt64
-	1,  // 14: mgrpc.v10.Ask.Int64AskMapStringFloat64:input_type -> mgrpc.v10.KvInt64
-	1,  // 15: mgrpc.v10.Ask.Int64AskMapStringString:input_type -> mgrpc.v10.KvInt64
-	1,  // 16: mgrpc.v10.Ask.Int64AskMapStringBytes:input_type -> mgrpc.v10.KvInt64
-	3,  // 17: mgrpc.v10.Ask.StringAskBool:input_type -> mgrpc.v10.KvString
-	3,  // 18: mgrpc.v10.Ask.StringAskBytes:input_type -> mgrpc.v10.KvString
-	3,  // 19: mgrpc.v10.Ask.StringAskInt64:input_type -> mgrpc.v10.KvString
-	3,  // 20: mgrpc.v10.Ask.StringAskFloat64:input_type -> mgrpc.v10.KvString
-	3,  // 21: mgrpc.v10.Ask.StringAskString:input_type -> mgrpc.v10.KvString
-	3,  // 22: mgrpc.v10.Ask.StringAskStringArray:input_type -> mgrpc.v10.KvString
-	3,  // 23: mgrpc.v10.Ask.StringAskMapStringBool:input_type -> mgrpc.v10.KvString
-	3,  // 24: mgrpc.v10.Ask.StringAskMapStringInt64:input_type -> mgrpc.v10.KvString
-	3,  // 25: mgrpc.v10.Ask.StringAskMapStringFloat64:input_type -> mgrpc.v10.KvString
-	3,  // 26: mgrpc.v10.Ask.StringAskMapStringString:input_type -> mgrpc.v10.KvString
-	3,  // 27: mgrpc.v10.Ask.StringAskMapStringBytes:input_type -> mgrpc.v10.KvString
-	4,  // 28: mgrpc.v10.Ask.BytesAskBool:input_type -> mgrpc.v10.KvBytes
-	4,  // 29: mgrpc.v10.Ask.BytesAskBytes:input_type -> mgrpc.v10.KvBytes
-	4,  // 30: mgrpc.v10.Ask.BytesAskInt64:input_type -> mgrpc.v10.KvBytes
-	4,  // 31: mgrpc.v10.Ask.BytesAskFloat64:input_type -> mgrpc.v10.KvBytes
-	4,  // 32: mgrpc.v10.Ask.BytesAskString:input_type -> mgrpc.v10.KvBytes
-	4,  // 33: mgrpc.v10.Ask.BytesAskStringArray:input_type -> mgrpc.v10.KvBytes
-	4,  // 34: mgrpc.v10.Ask.BytesAskMapStringBool:input_type -> mgrpc.v10.KvBytes
-	4,  // 35: mgrpc.v10.Ask.BytesAskMapStringInt64:input_type -> mgrpc.v10.KvBytes
-	4,  // 36: mgrpc.v10.Ask.BytesAskMapStringFloat64:input_type -> mgrpc.v10.KvBytes
-	4,  // 37: mgrpc.v10.Ask.BytesAskMapStringString:input_type -> mgrpc.v10.KvBytes
-	4,  // 38: mgrpc.v10.Ask.BytesAskMapStringBytes:input_type -> mgrpc.v10.KvBytes
+	2,  // 6: mgrpc.v10.Ask.Int64AskBool:input_type -> mgrpc.v10.KvInt64
+	2,  // 7: mgrpc.v10.Ask.Int64AskBytes:input_type -> mgrpc.v10.KvInt64
+	2,  // 8: mgrpc.v10.Ask.Int64AskInt64:input_type -> mgrpc.v10.KvInt64
+	2,  // 9: mgrpc.v10.Ask.Int64AskFloat64:input_type -> mgrpc.v10.KvInt64
+	2,  // 10: mgrpc.v10.Ask.Int64AskString:input_type -> mgrpc.v10.KvInt64
+	2,  // 11: mgrpc.v10.Ask.Int64AskStringArray:input_type -> mgrpc.v10.KvInt64
+	2,  // 12: mgrpc.v10.Ask.Int64AskMapStringBool:input_type -> mgrpc.v10.KvInt64
+	2,  // 13: mgrpc.v10.Ask.Int64AskMapStringInt64:input_type -> mgrpc.v10.KvInt64
+	2,  // 14: mgrpc.v10.Ask.Int64AskMapStringFloat64:input_type -> mgrpc.v10.KvInt64
+	2,  // 15: mgrpc.v10.Ask.Int64AskMapStringString:input_type -> mgrpc.v10.KvInt64
+	2,  // 16: mgrpc.v10.Ask.Int64AskMapStringBytes:input_type -> mgrpc.v10.KvInt64
+	4,  // 17: mgrpc.v10.Ask.StringAskBool:input_type -> mgrpc.v10.KvString
+	4,  // 18: mgrpc.v10.Ask.StringAskBytes:input_type -> mgrpc.v10.KvString
+	4,  // 19: mgrpc.v10.Ask.StringAskInt64:input_type -> mgrpc.v10.KvString
+	4,  // 20: mgrpc.v10.Ask.StringAskFloat64:input_type -> mgrpc.v10.KvString
+	4,  // 21: mgrpc.v10.Ask.StringAskString:input_type -> mgrpc.v10.KvString
+	4,  // 22: mgrpc.v10.Ask.StringAskStringArray:input_type -> mgrpc.v10.KvString
+	4,  // 23: mgrpc.v10.Ask.StringAskMapStringBool:input_type -> mgrpc.v10.KvString
+	4,  // 24: mgrpc.v10.Ask.StringAskMapStringInt64:input_type -> mgrpc.v10.KvString
+	4,  // 25: mgrpc.v10.Ask.StringAskMapStringFloat64:input_type -> mgrpc.v10.KvString
+	4,  // 26: mgrpc.v10.Ask.StringAskMapStringString:input_type -> mgrpc.v10.KvString
+	4,  // 27: mgrpc.v10.Ask.StringAskMapStringBytes:input_type -> mgrpc.v10.KvString
+	1,  // 28: mgrpc.v10.Ask.BytesAskBool:input_type -> mgrpc.v10.KvBytes
+	1,  // 29: mgrpc.v10.Ask.BytesAskBytes:input_type -> mgrpc.v10.KvBytes
+	1,  // 30: mgrpc.v10.Ask.BytesAskInt64:input_type -> mgrpc.v10.KvBytes
+	1,  // 31: mgrpc.v10.Ask.BytesAskFloat64:input_type -> mgrpc.v10.KvBytes
+	1,  // 32: mgrpc.v10.Ask.BytesAskString:input_type -> mgrpc.v10.KvBytes
+	1,  // 33: mgrpc.v10.Ask.BytesAskStringArray:input_type -> mgrpc.v10.KvBytes
+	1,  // 34: mgrpc.v10.Ask.BytesAskMapStringBool:input_type -> mgrpc.v10.KvBytes
+	1,  // 35: mgrpc.v10.Ask.BytesAskMapStringBytes:input_type -> mgrpc.v10.KvBytes
+	1,  // 36: mgrpc.v10.Ask.BytesAskMapStringInt64:input_type -> mgrpc.v10.KvBytes
+	1,  // 37: mgrpc.v10.Ask.BytesAskMapStringFloat64:input_type -> mgrpc.v10.KvBytes
+	1,  // 38: mgrpc.v10.Ask.BytesAskMapStringString:input_type -> mgrpc.v10.KvBytes
 	16, // 39: mgrpc.v10.Ask.Any:output_type -> google.protobuf.Any
 	0,  // 40: mgrpc.v10.Ask.Int64AskBool:output_type -> mgrpc.v10.KvBool
-	4,  // 41: mgrpc.v10.Ask.Int64AskBytes:output_type -> mgrpc.v10.KvBytes
-	1,  // 42: mgrpc.v10.Ask.Int64AskInt64:output_type -> mgrpc.v10.KvInt64
-	2,  // 43: mgrpc.v10.Ask.Int64AskFloat64:output_type -> mgrpc.v10.KvFloat64
-	3,  // 44: mgrpc.v10.Ask.Int64AskString:output_type -> mgrpc.v10.KvString
+	1,  // 41: mgrpc.v10.Ask.Int64AskBytes:output_type -> mgrpc.v10.KvBytes
+	2,  // 42: mgrpc.v10.Ask.Int64AskInt64:output_type -> mgrpc.v10.KvInt64
+	3,  // 43: mgrpc.v10.Ask.Int64AskFloat64:output_type -> mgrpc.v10.KvFloat64
+	4,  // 44: mgrpc.v10.Ask.Int64AskString:output_type -> mgrpc.v10.KvString
 	5,  // 45: mgrpc.v10.Ask.Int64AskStringArray:output_type -> mgrpc.v10.KvStringArray
 	6,  // 46: mgrpc.v10.Ask.Int64AskMapStringBool:output_type -> mgrpc.v10.MapStringBool
-	7,  // 47: mgrpc.v10.Ask.Int64AskMapStringInt64:output_type -> mgrpc.v10.MapStringInt64
-	8,  // 48: mgrpc.v10.Ask.Int64AskMapStringFloat64:output_type -> mgrpc.v10.MapStringFloat64
-	9,  // 49: mgrpc.v10.Ask.Int64AskMapStringString:output_type -> mgrpc.v10.MapStringString
-	10, // 50: mgrpc.v10.Ask.Int64AskMapStringBytes:output_type -> mgrpc.v10.MapStringBytes
+	8,  // 47: mgrpc.v10.Ask.Int64AskMapStringInt64:output_type -> mgrpc.v10.MapStringInt64
+	9,  // 48: mgrpc.v10.Ask.Int64AskMapStringFloat64:output_type -> mgrpc.v10.MapStringFloat64
+	10, // 49: mgrpc.v10.Ask.Int64AskMapStringString:output_type -> mgrpc.v10.MapStringString
+	7,  // 50: mgrpc.v10.Ask.Int64AskMapStringBytes:output_type -> mgrpc.v10.MapStringBytes
 	0,  // 51: mgrpc.v10.Ask.StringAskBool:output_type -> mgrpc.v10.KvBool
-	4,  // 52: mgrpc.v10.Ask.StringAskBytes:output_type -> mgrpc.v10.KvBytes
-	1,  // 53: mgrpc.v10.Ask.StringAskInt64:output_type -> mgrpc.v10.KvInt64
-	2,  // 54: mgrpc.v10.Ask.StringAskFloat64:output_type -> mgrpc.v10.KvFloat64
-	3,  // 55: mgrpc.v10.Ask.StringAskString:output_type -> mgrpc.v10.KvString
+	1,  // 52: mgrpc.v10.Ask.StringAskBytes:output_type -> mgrpc.v10.KvBytes
+	2,  // 53: mgrpc.v10.Ask.StringAskInt64:output_type -> mgrpc.v10.KvInt64
+	3,  // 54: mgrpc.v10.Ask.StringAskFloat64:output_type -> mgrpc.v10.KvFloat64
+	4,  // 55: mgrpc.v10.Ask.StringAskString:output_type -> mgrpc.v10.KvString
 	5,  // 56: mgrpc.v10.Ask.StringAskStringArray:output_type -> mgrpc.v10.KvStringArray
 	6,  // 57: mgrpc.v10.Ask.StringAskMapStringBool:output_type -> mgrpc.v10.MapStringBool
-	7,  // 58: mgrpc.v10.Ask.StringAskMapStringInt64:output_type -> mgrpc.v10.MapStringInt64
-	8,  // 59: mgrpc.v10.Ask.StringAskMapStringFloat64:output_type -> mgrpc.v10.MapStringFloat64
-	9,  // 60: mgrpc.v10.Ask.StringAskMapStringString:output_type -> mgrpc.v10.MapStringString
-	10, // 61: mgrpc.v10.Ask.StringAskMapStringBytes:output_type -> mgrpc.v10.MapStringBytes
+	8,  // 58: mgrpc.v10.Ask.StringAskMapStringInt64:output_type -> mgrpc.v10.MapStringInt64
+	9,  // 59: mgrpc.v10.Ask.StringAskMapStringFloat64:output_type -> mgrpc.v10.MapStringFloat64
+	10, // 60: mgrpc.v10.Ask.StringAskMapStringString:output_type -> mgrpc.v10.MapStringString
+	7,  // 61: mgrpc.v10.Ask.StringAskMapStringBytes:output_type -> mgrpc.v10.MapStringBytes
 	0,  // 62: mgrpc.v10.Ask.BytesAskBool:output_type -> mgrpc.v10.KvBool
-	4,  // 63: mgrpc.v10.Ask.BytesAskBytes:output_type -> mgrpc.v10.KvBytes
-	1,  // 64: mgrpc.v10.Ask.BytesAskInt64:output_type -> mgrpc.v10.KvInt64
-	2,  // 65: mgrpc.v10.Ask.BytesAskFloat64:output_type -> mgrpc.v10.KvFloat64
-	3,  // 66: mgrpc.v10.Ask.BytesAskString:output_type -> mgrpc.v10.KvString
+	1,  // 63: mgrpc.v10.Ask.BytesAskBytes:output_type -> mgrpc.v10.KvBytes
+	2,  // 64: mgrpc.v10.Ask.BytesAskInt64:output_type -> mgrpc.v10.KvInt64
+	3,  // 65: mgrpc.v10.Ask.BytesAskFloat64:output_type -> mgrpc.v10.KvFloat64
+	4,  // 66: mgrpc.v10.Ask.BytesAskString:output_type -> mgrpc.v10.KvString
 	5,  // 67: mgrpc.v10.Ask.BytesAskStringArray:output_type -> mgrpc.v10.KvStringArray
 	6,  // 68: mgrpc.v10.Ask.BytesAskMapStringBool:output_type -> mgrpc.v10.MapStringBool
-	7,  // 69: mgrpc.v10.Ask.BytesAskMapStringInt64:output_type -> mgrpc.v10.MapStringInt64
-	8,  // 70: mgrpc.v10.Ask.BytesAskMapStringFloat64:output_type -> mgrpc.v10.MapStringFloat64
-	9,  // 71: mgrpc.v10.Ask.BytesAskMapStringString:output_type -> mgrpc.v10.MapStringString
-	10, // 72: mgrpc.v10.Ask.BytesAskMapStringBytes:output_type -> mgrpc.v10.MapStringBytes
+	7,  // 69: mgrpc.v10.Ask.BytesAskMapStringBytes:output_type -> mgrpc.v10.MapStringBytes
+	8,  // 70: mgrpc.v10.Ask.BytesAskMapStringInt64:output_type -> mgrpc.v10.MapStringInt64
+	9,  // 71: mgrpc.v10.Ask.BytesAskMapStringFloat64:output_type -> mgrpc.v10.MapStringFloat64
+	10, // 72: mgrpc.v10.Ask.BytesAskMapStringString:output_type -> mgrpc.v10.MapStringString
 	39, // [39:73] is the sub-list for method output_type
 	5,  // [5:39] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name
