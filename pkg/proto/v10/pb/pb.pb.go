@@ -647,7 +647,7 @@ const file_pkg_proto_v10_pb_pb_proto_rawDesc = "" +
 	"\bValEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x012\x95\x12\n" +
-	"\x03Ask\x121\n" +
+	"\x03Rpc\x121\n" +
 	"\x03Any\x12\x14.google.protobuf.Any\x1a\x14.google.protobuf.Any\x127\n" +
 	"\fInt64AskBool\x12\x12.mgrpc.v10.KvInt64\x1a\x11.mgrpc.v10.KvBool\"\x00\x129\n" +
 	"\rInt64AskBytes\x12\x12.mgrpc.v10.KvInt64\x1a\x12.mgrpc.v10.KvBytes\"\x00\x129\n" +
@@ -721,74 +721,74 @@ var file_pkg_proto_v10_pb_pb_proto_depIdxs = []int32{
 	13, // 2: mgrpc.v10.MapStringInt64.val:type_name -> mgrpc.v10.MapStringInt64.ValEntry
 	14, // 3: mgrpc.v10.MapStringFloat64.val:type_name -> mgrpc.v10.MapStringFloat64.ValEntry
 	15, // 4: mgrpc.v10.MapStringString.val:type_name -> mgrpc.v10.MapStringString.ValEntry
-	16, // 5: mgrpc.v10.Ask.Any:input_type -> google.protobuf.Any
-	2,  // 6: mgrpc.v10.Ask.Int64AskBool:input_type -> mgrpc.v10.KvInt64
-	2,  // 7: mgrpc.v10.Ask.Int64AskBytes:input_type -> mgrpc.v10.KvInt64
-	2,  // 8: mgrpc.v10.Ask.Int64AskInt64:input_type -> mgrpc.v10.KvInt64
-	2,  // 9: mgrpc.v10.Ask.Int64AskFloat64:input_type -> mgrpc.v10.KvInt64
-	2,  // 10: mgrpc.v10.Ask.Int64AskString:input_type -> mgrpc.v10.KvInt64
-	2,  // 11: mgrpc.v10.Ask.Int64AskStringArray:input_type -> mgrpc.v10.KvInt64
-	2,  // 12: mgrpc.v10.Ask.Int64AskMapStringBool:input_type -> mgrpc.v10.KvInt64
-	2,  // 13: mgrpc.v10.Ask.Int64AskMapStringInt64:input_type -> mgrpc.v10.KvInt64
-	2,  // 14: mgrpc.v10.Ask.Int64AskMapStringFloat64:input_type -> mgrpc.v10.KvInt64
-	2,  // 15: mgrpc.v10.Ask.Int64AskMapStringString:input_type -> mgrpc.v10.KvInt64
-	2,  // 16: mgrpc.v10.Ask.Int64AskMapStringBytes:input_type -> mgrpc.v10.KvInt64
-	4,  // 17: mgrpc.v10.Ask.StringAskBool:input_type -> mgrpc.v10.KvString
-	4,  // 18: mgrpc.v10.Ask.StringAskBytes:input_type -> mgrpc.v10.KvString
-	4,  // 19: mgrpc.v10.Ask.StringAskInt64:input_type -> mgrpc.v10.KvString
-	4,  // 20: mgrpc.v10.Ask.StringAskFloat64:input_type -> mgrpc.v10.KvString
-	4,  // 21: mgrpc.v10.Ask.StringAskString:input_type -> mgrpc.v10.KvString
-	4,  // 22: mgrpc.v10.Ask.StringAskStringArray:input_type -> mgrpc.v10.KvString
-	4,  // 23: mgrpc.v10.Ask.StringAskMapStringBool:input_type -> mgrpc.v10.KvString
-	4,  // 24: mgrpc.v10.Ask.StringAskMapStringInt64:input_type -> mgrpc.v10.KvString
-	4,  // 25: mgrpc.v10.Ask.StringAskMapStringFloat64:input_type -> mgrpc.v10.KvString
-	4,  // 26: mgrpc.v10.Ask.StringAskMapStringString:input_type -> mgrpc.v10.KvString
-	4,  // 27: mgrpc.v10.Ask.StringAskMapStringBytes:input_type -> mgrpc.v10.KvString
-	1,  // 28: mgrpc.v10.Ask.BytesAskBool:input_type -> mgrpc.v10.KvBytes
-	1,  // 29: mgrpc.v10.Ask.BytesAskBytes:input_type -> mgrpc.v10.KvBytes
-	1,  // 30: mgrpc.v10.Ask.BytesAskInt64:input_type -> mgrpc.v10.KvBytes
-	1,  // 31: mgrpc.v10.Ask.BytesAskFloat64:input_type -> mgrpc.v10.KvBytes
-	1,  // 32: mgrpc.v10.Ask.BytesAskString:input_type -> mgrpc.v10.KvBytes
-	1,  // 33: mgrpc.v10.Ask.BytesAskStringArray:input_type -> mgrpc.v10.KvBytes
-	1,  // 34: mgrpc.v10.Ask.BytesAskMapStringBool:input_type -> mgrpc.v10.KvBytes
-	1,  // 35: mgrpc.v10.Ask.BytesAskMapStringBytes:input_type -> mgrpc.v10.KvBytes
-	1,  // 36: mgrpc.v10.Ask.BytesAskMapStringInt64:input_type -> mgrpc.v10.KvBytes
-	1,  // 37: mgrpc.v10.Ask.BytesAskMapStringFloat64:input_type -> mgrpc.v10.KvBytes
-	1,  // 38: mgrpc.v10.Ask.BytesAskMapStringString:input_type -> mgrpc.v10.KvBytes
-	16, // 39: mgrpc.v10.Ask.Any:output_type -> google.protobuf.Any
-	0,  // 40: mgrpc.v10.Ask.Int64AskBool:output_type -> mgrpc.v10.KvBool
-	1,  // 41: mgrpc.v10.Ask.Int64AskBytes:output_type -> mgrpc.v10.KvBytes
-	2,  // 42: mgrpc.v10.Ask.Int64AskInt64:output_type -> mgrpc.v10.KvInt64
-	3,  // 43: mgrpc.v10.Ask.Int64AskFloat64:output_type -> mgrpc.v10.KvFloat64
-	4,  // 44: mgrpc.v10.Ask.Int64AskString:output_type -> mgrpc.v10.KvString
-	5,  // 45: mgrpc.v10.Ask.Int64AskStringArray:output_type -> mgrpc.v10.KvStringArray
-	6,  // 46: mgrpc.v10.Ask.Int64AskMapStringBool:output_type -> mgrpc.v10.MapStringBool
-	8,  // 47: mgrpc.v10.Ask.Int64AskMapStringInt64:output_type -> mgrpc.v10.MapStringInt64
-	9,  // 48: mgrpc.v10.Ask.Int64AskMapStringFloat64:output_type -> mgrpc.v10.MapStringFloat64
-	10, // 49: mgrpc.v10.Ask.Int64AskMapStringString:output_type -> mgrpc.v10.MapStringString
-	7,  // 50: mgrpc.v10.Ask.Int64AskMapStringBytes:output_type -> mgrpc.v10.MapStringBytes
-	0,  // 51: mgrpc.v10.Ask.StringAskBool:output_type -> mgrpc.v10.KvBool
-	1,  // 52: mgrpc.v10.Ask.StringAskBytes:output_type -> mgrpc.v10.KvBytes
-	2,  // 53: mgrpc.v10.Ask.StringAskInt64:output_type -> mgrpc.v10.KvInt64
-	3,  // 54: mgrpc.v10.Ask.StringAskFloat64:output_type -> mgrpc.v10.KvFloat64
-	4,  // 55: mgrpc.v10.Ask.StringAskString:output_type -> mgrpc.v10.KvString
-	5,  // 56: mgrpc.v10.Ask.StringAskStringArray:output_type -> mgrpc.v10.KvStringArray
-	6,  // 57: mgrpc.v10.Ask.StringAskMapStringBool:output_type -> mgrpc.v10.MapStringBool
-	8,  // 58: mgrpc.v10.Ask.StringAskMapStringInt64:output_type -> mgrpc.v10.MapStringInt64
-	9,  // 59: mgrpc.v10.Ask.StringAskMapStringFloat64:output_type -> mgrpc.v10.MapStringFloat64
-	10, // 60: mgrpc.v10.Ask.StringAskMapStringString:output_type -> mgrpc.v10.MapStringString
-	7,  // 61: mgrpc.v10.Ask.StringAskMapStringBytes:output_type -> mgrpc.v10.MapStringBytes
-	0,  // 62: mgrpc.v10.Ask.BytesAskBool:output_type -> mgrpc.v10.KvBool
-	1,  // 63: mgrpc.v10.Ask.BytesAskBytes:output_type -> mgrpc.v10.KvBytes
-	2,  // 64: mgrpc.v10.Ask.BytesAskInt64:output_type -> mgrpc.v10.KvInt64
-	3,  // 65: mgrpc.v10.Ask.BytesAskFloat64:output_type -> mgrpc.v10.KvFloat64
-	4,  // 66: mgrpc.v10.Ask.BytesAskString:output_type -> mgrpc.v10.KvString
-	5,  // 67: mgrpc.v10.Ask.BytesAskStringArray:output_type -> mgrpc.v10.KvStringArray
-	6,  // 68: mgrpc.v10.Ask.BytesAskMapStringBool:output_type -> mgrpc.v10.MapStringBool
-	7,  // 69: mgrpc.v10.Ask.BytesAskMapStringBytes:output_type -> mgrpc.v10.MapStringBytes
-	8,  // 70: mgrpc.v10.Ask.BytesAskMapStringInt64:output_type -> mgrpc.v10.MapStringInt64
-	9,  // 71: mgrpc.v10.Ask.BytesAskMapStringFloat64:output_type -> mgrpc.v10.MapStringFloat64
-	10, // 72: mgrpc.v10.Ask.BytesAskMapStringString:output_type -> mgrpc.v10.MapStringString
+	16, // 5: mgrpc.v10.Rpc.Any:input_type -> google.protobuf.Any
+	2,  // 6: mgrpc.v10.Rpc.Int64AskBool:input_type -> mgrpc.v10.KvInt64
+	2,  // 7: mgrpc.v10.Rpc.Int64AskBytes:input_type -> mgrpc.v10.KvInt64
+	2,  // 8: mgrpc.v10.Rpc.Int64AskInt64:input_type -> mgrpc.v10.KvInt64
+	2,  // 9: mgrpc.v10.Rpc.Int64AskFloat64:input_type -> mgrpc.v10.KvInt64
+	2,  // 10: mgrpc.v10.Rpc.Int64AskString:input_type -> mgrpc.v10.KvInt64
+	2,  // 11: mgrpc.v10.Rpc.Int64AskStringArray:input_type -> mgrpc.v10.KvInt64
+	2,  // 12: mgrpc.v10.Rpc.Int64AskMapStringBool:input_type -> mgrpc.v10.KvInt64
+	2,  // 13: mgrpc.v10.Rpc.Int64AskMapStringInt64:input_type -> mgrpc.v10.KvInt64
+	2,  // 14: mgrpc.v10.Rpc.Int64AskMapStringFloat64:input_type -> mgrpc.v10.KvInt64
+	2,  // 15: mgrpc.v10.Rpc.Int64AskMapStringString:input_type -> mgrpc.v10.KvInt64
+	2,  // 16: mgrpc.v10.Rpc.Int64AskMapStringBytes:input_type -> mgrpc.v10.KvInt64
+	4,  // 17: mgrpc.v10.Rpc.StringAskBool:input_type -> mgrpc.v10.KvString
+	4,  // 18: mgrpc.v10.Rpc.StringAskBytes:input_type -> mgrpc.v10.KvString
+	4,  // 19: mgrpc.v10.Rpc.StringAskInt64:input_type -> mgrpc.v10.KvString
+	4,  // 20: mgrpc.v10.Rpc.StringAskFloat64:input_type -> mgrpc.v10.KvString
+	4,  // 21: mgrpc.v10.Rpc.StringAskString:input_type -> mgrpc.v10.KvString
+	4,  // 22: mgrpc.v10.Rpc.StringAskStringArray:input_type -> mgrpc.v10.KvString
+	4,  // 23: mgrpc.v10.Rpc.StringAskMapStringBool:input_type -> mgrpc.v10.KvString
+	4,  // 24: mgrpc.v10.Rpc.StringAskMapStringInt64:input_type -> mgrpc.v10.KvString
+	4,  // 25: mgrpc.v10.Rpc.StringAskMapStringFloat64:input_type -> mgrpc.v10.KvString
+	4,  // 26: mgrpc.v10.Rpc.StringAskMapStringString:input_type -> mgrpc.v10.KvString
+	4,  // 27: mgrpc.v10.Rpc.StringAskMapStringBytes:input_type -> mgrpc.v10.KvString
+	1,  // 28: mgrpc.v10.Rpc.BytesAskBool:input_type -> mgrpc.v10.KvBytes
+	1,  // 29: mgrpc.v10.Rpc.BytesAskBytes:input_type -> mgrpc.v10.KvBytes
+	1,  // 30: mgrpc.v10.Rpc.BytesAskInt64:input_type -> mgrpc.v10.KvBytes
+	1,  // 31: mgrpc.v10.Rpc.BytesAskFloat64:input_type -> mgrpc.v10.KvBytes
+	1,  // 32: mgrpc.v10.Rpc.BytesAskString:input_type -> mgrpc.v10.KvBytes
+	1,  // 33: mgrpc.v10.Rpc.BytesAskStringArray:input_type -> mgrpc.v10.KvBytes
+	1,  // 34: mgrpc.v10.Rpc.BytesAskMapStringBool:input_type -> mgrpc.v10.KvBytes
+	1,  // 35: mgrpc.v10.Rpc.BytesAskMapStringBytes:input_type -> mgrpc.v10.KvBytes
+	1,  // 36: mgrpc.v10.Rpc.BytesAskMapStringInt64:input_type -> mgrpc.v10.KvBytes
+	1,  // 37: mgrpc.v10.Rpc.BytesAskMapStringFloat64:input_type -> mgrpc.v10.KvBytes
+	1,  // 38: mgrpc.v10.Rpc.BytesAskMapStringString:input_type -> mgrpc.v10.KvBytes
+	16, // 39: mgrpc.v10.Rpc.Any:output_type -> google.protobuf.Any
+	0,  // 40: mgrpc.v10.Rpc.Int64AskBool:output_type -> mgrpc.v10.KvBool
+	1,  // 41: mgrpc.v10.Rpc.Int64AskBytes:output_type -> mgrpc.v10.KvBytes
+	2,  // 42: mgrpc.v10.Rpc.Int64AskInt64:output_type -> mgrpc.v10.KvInt64
+	3,  // 43: mgrpc.v10.Rpc.Int64AskFloat64:output_type -> mgrpc.v10.KvFloat64
+	4,  // 44: mgrpc.v10.Rpc.Int64AskString:output_type -> mgrpc.v10.KvString
+	5,  // 45: mgrpc.v10.Rpc.Int64AskStringArray:output_type -> mgrpc.v10.KvStringArray
+	6,  // 46: mgrpc.v10.Rpc.Int64AskMapStringBool:output_type -> mgrpc.v10.MapStringBool
+	8,  // 47: mgrpc.v10.Rpc.Int64AskMapStringInt64:output_type -> mgrpc.v10.MapStringInt64
+	9,  // 48: mgrpc.v10.Rpc.Int64AskMapStringFloat64:output_type -> mgrpc.v10.MapStringFloat64
+	10, // 49: mgrpc.v10.Rpc.Int64AskMapStringString:output_type -> mgrpc.v10.MapStringString
+	7,  // 50: mgrpc.v10.Rpc.Int64AskMapStringBytes:output_type -> mgrpc.v10.MapStringBytes
+	0,  // 51: mgrpc.v10.Rpc.StringAskBool:output_type -> mgrpc.v10.KvBool
+	1,  // 52: mgrpc.v10.Rpc.StringAskBytes:output_type -> mgrpc.v10.KvBytes
+	2,  // 53: mgrpc.v10.Rpc.StringAskInt64:output_type -> mgrpc.v10.KvInt64
+	3,  // 54: mgrpc.v10.Rpc.StringAskFloat64:output_type -> mgrpc.v10.KvFloat64
+	4,  // 55: mgrpc.v10.Rpc.StringAskString:output_type -> mgrpc.v10.KvString
+	5,  // 56: mgrpc.v10.Rpc.StringAskStringArray:output_type -> mgrpc.v10.KvStringArray
+	6,  // 57: mgrpc.v10.Rpc.StringAskMapStringBool:output_type -> mgrpc.v10.MapStringBool
+	8,  // 58: mgrpc.v10.Rpc.StringAskMapStringInt64:output_type -> mgrpc.v10.MapStringInt64
+	9,  // 59: mgrpc.v10.Rpc.StringAskMapStringFloat64:output_type -> mgrpc.v10.MapStringFloat64
+	10, // 60: mgrpc.v10.Rpc.StringAskMapStringString:output_type -> mgrpc.v10.MapStringString
+	7,  // 61: mgrpc.v10.Rpc.StringAskMapStringBytes:output_type -> mgrpc.v10.MapStringBytes
+	0,  // 62: mgrpc.v10.Rpc.BytesAskBool:output_type -> mgrpc.v10.KvBool
+	1,  // 63: mgrpc.v10.Rpc.BytesAskBytes:output_type -> mgrpc.v10.KvBytes
+	2,  // 64: mgrpc.v10.Rpc.BytesAskInt64:output_type -> mgrpc.v10.KvInt64
+	3,  // 65: mgrpc.v10.Rpc.BytesAskFloat64:output_type -> mgrpc.v10.KvFloat64
+	4,  // 66: mgrpc.v10.Rpc.BytesAskString:output_type -> mgrpc.v10.KvString
+	5,  // 67: mgrpc.v10.Rpc.BytesAskStringArray:output_type -> mgrpc.v10.KvStringArray
+	6,  // 68: mgrpc.v10.Rpc.BytesAskMapStringBool:output_type -> mgrpc.v10.MapStringBool
+	7,  // 69: mgrpc.v10.Rpc.BytesAskMapStringBytes:output_type -> mgrpc.v10.MapStringBytes
+	8,  // 70: mgrpc.v10.Rpc.BytesAskMapStringInt64:output_type -> mgrpc.v10.MapStringInt64
+	9,  // 71: mgrpc.v10.Rpc.BytesAskMapStringFloat64:output_type -> mgrpc.v10.MapStringFloat64
+	10, // 72: mgrpc.v10.Rpc.BytesAskMapStringString:output_type -> mgrpc.v10.MapStringString
 	39, // [39:73] is the sub-list for method output_type
 	5,  // [5:39] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name

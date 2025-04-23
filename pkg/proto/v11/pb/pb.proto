@@ -1,0 +1,21 @@
+syntax = "proto3";
+// import "google/protobuf/any.proto";
+
+package mgrpc.v11;
+option go_package = ".;pb";
+
+service Rpc {
+  // rpc Any(google.protobuf.Any) returns (google.protobuf.Any);
+  rpc Oneof(KvOneof) returns (KvOneof);
+}
+
+message KvOneof {
+  string key = 1;
+  oneof val {
+    string str = 2;
+    bool bool = 3;
+    bytes bytes = 4;
+    int64 int64 = 5;
+    float float64 = 6;
+  }
+}
