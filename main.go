@@ -12,13 +12,13 @@ import (
 	"google.golang.org/grpc/reflection"
 )
 
-type ts struct {
+type app struct {
 	conn *grpc.ClientConn
 	v10c v10pb.RpcClient
 	v11c v11pb.RpcClient
 }
 
-func (t *ts) server() error {
+func (t *app) server() error {
 	mlog.Info(mlog.H{"start server": "start server"})
 
 	server := grpc.NewServer()
@@ -32,9 +32,9 @@ func (t *ts) server() error {
 	return server.Serve(lis)
 }
 
-func NewTS() (*ts, error) {
+func NewApp() (*app, error) {
 	var err error
-	t := &ts{}
+	t := &app{}
 	t.conn, err = grpc.NewClient("localhost:50051", grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
 		mlog.Error(mlog.H{"err": err})
@@ -47,7 +47,7 @@ func NewTS() (*ts, error) {
 	return t, nil
 }
 
-func (t *ts) Int64AskString() {
+func (t *app) Int64AskString() {
 	res, err := t.v10c.Int64AskString(context.Background(), &v10pb.KvInt64{
 		Key: "test",
 		Val: 99,
@@ -58,7 +58,7 @@ func (t *ts) Int64AskString() {
 func main() {
 	defer mlog.Close()
 	mlog.Info(mlog.H{"Hello, World!": "Hello, World!"})
-	app, err := NewTS()
+	app, err := NewApp()
 	if err != nil {
 		mlog.Error(mlog.H{"err": err})
 		return
